@@ -166,16 +166,18 @@ with st.sidebar:
 
 st.markdown("##### 🎯 Teste um desafio (ou digite sua própria descrição):")
 c1, c2, c3, c4 = st.columns(4)
-busca_padrao = "professor com doença grave que fabrica drogas no deserto"
+# Desafios escolhidos com sinônimos que NÃO aparecem nos textos da Wikipédia,
+# para mostrar o Embedding acertando onde o BM25 se confunde.
+busca_padrao = "explosão de reator atômico"
 
-if c1.button("🧪 Professor doente que fabrica drogas"):
-    busca_padrao = "professor com doença grave que fabrica drogas no deserto"
-if c2.button("🏦 Assalto planejado para imprimir dinheiro na Espanha"):
-    busca_padrao = "assalto planejado para imprimir dinheiro na Espanha"
-if c3.button("🧟‍♂️ Mundo destruído por apocalipse de mortos-vivos"):
-    busca_padrao = "sobreviventes fugindo de apocalipse de mortos-vivos"
-if c4.button("🏥 Médicos cirurgiões apaixonados no hospital"):
-    busca_padrao = "médicos cirurgiões vivendo romances no hospital"
+if c1.button("☢️ Reator que explodiu"):
+    busca_padrao = "explosão de reator atômico"
+if c2.button("💼 Rotina no escritório"):
+    busca_padrao = "rotina de funcionários num escritório"
+if c3.button("🛋️ Amigos no apartamento"):
+    busca_padrao = "turma de amigos que vive num apartamento"
+if c4.button("🐉 Dragões e o trono"):
+    busca_padrao = "reinos lutando pelo trono com dragões"
 
 query = st.text_input("🔍 Descreva a série sem dizer o nome dela:", value=busca_padrao)
 
